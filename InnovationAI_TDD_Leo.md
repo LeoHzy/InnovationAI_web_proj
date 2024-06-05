@@ -6,13 +6,13 @@ Scope: This document covers the design of both the front-end and back-end of the
 
 Definitions, Acronyms, and Abbreviations: 
 
-	API: Application Programming Interface
+API: Application Programming Interface
 
-		TDD: Technical Design Document
+TDD: Technical Design Document
 
-		UI: User Interface
+UI: User Interface
 
-		DB: Database
+DB: Database
 
 References:
 
@@ -89,13 +89,13 @@ created_at (Timestamp)
 
 Interactions:
 
-		interaction_id (Primary Key)
+interaction_id (Primary Key)
 
 user_id (Foreign Key)
 
 question
 
-	response
+response
 
 timestamp
 
@@ -117,15 +117,15 @@ Components:
 
 Home: Displays an overview of the company.
 
-		About: Shows detailed information about the company.
+About: Shows detailed information about the company.
 
-		Services: Lists the services offered by the company.
+Services: Lists the services offered by the company.
 
-		Chatbot: Provides an interactive chat interface for user queries.
+Chatbot: Provides an interactive chat interface for user queries.
 
-		Login: Allows users to log in to their accounts.
+Login: Allows users to log in to their accounts.
 
-		Register: Allows new users to create an account.
+Register: Allows new users to create an account.
 
 
 
@@ -151,19 +151,18 @@ Interface Design
 
 User Interface
 
-	Home Page: Overview of the company and navigation bar
+Home Page: Overview of the company and navigation bar
 
 
 
-	About us Page: Detailed information about the company.
+About us Page: Detailed information about the company.
 
 Contact us Page: contact information and blanks to fill your information.
 
-	Chatbot: Interactive chat interface for customer service.
+Chatbot: Interactive chat interface for customer service.
 
 
-
-	User dashboard (optional): a place to see all the user information and the service
+User dashboard (optional): a place to see all the user information and the service
 
 External Interfaces
 
@@ -175,25 +174,25 @@ Data Flow Diagram
 
 User Registration and Login:
 
-	•User inputs registration/login details.
+•User inputs registration/login details.
 
-	•Front-end sends data to the back-end.
+•Front-end sends data to the back-end.
 
-	•Back-end processes the request and interacts with the database.
+•Back-end processes the request and interacts with the database.
 
-	•The back-end returns a response to the front-end.
+•The back-end returns a response to the front-end.
 
 User Asks a Question:
 
-	•User inputs a question in the chat box.
+•User inputs a question in the chat box.
 
-	•Front-end sends the question to the back-end.
+•Front-end sends the question to the back-end.
 
-	•Back-end sends the question to the OpenAI API.
+•Back-end sends the question to the OpenAI API.
 
-	•OpenAI API returns the response to the back-end.
+•OpenAI API returns the response to the back-end.
 
-	•Back-end returns the response to the front-end.
+•Back-end returns the response to the front-end.
 
 Sequence Diagrams
 
@@ -211,7 +210,7 @@ Back-end -> Front-end: Returns success message
 
 Front-end -> User: Displays success message
 
-		User Login:
+User Login:
 
 User -> Front-end: Enters login details
 
