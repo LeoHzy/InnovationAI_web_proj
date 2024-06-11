@@ -4,22 +4,22 @@ import Home from './components/Home';
 import About from './components/About';
 import Contact from './components/Contact';
 import Chat from './components/Chat';
-import './style.css';
+import NavigationBar from './components/Navbar'; // Import the Navbar component
 
 function App() {
   return (
     <Router>
+      <NavigationBar />
       <div>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
-          <Route path="/Contact" element={<Contact />} />
+          <Route path="/contact" element={<Contact />} />
           <Route path="/chatbot" element={<Chat />} />
         </Routes>
       </div>
     </Router>
   );
 }
-
 
 export default App;

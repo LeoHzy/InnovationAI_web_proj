@@ -34,6 +34,11 @@ npm install react-router-dom
 ~~~ 
 npm install axios
 ~~~
+### 5. install bootstrap and font-awesome
+~~~ 
+npm install react-bootstrap bootstrap
+npm install @fortawesome/fontawesome-free
+~~~
 
 ### react app connection with server
 > add "proxy": "http://127.0.0.1:5000" in package.json

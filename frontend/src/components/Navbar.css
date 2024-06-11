@@ -1,0 +1,22 @@
+.navbar {
+    margin-bottom: 20px;
+  }
+  
+  .nav-link {
+    color: #000 !important;
+  }
+  
+  .nav-link.active {
+    font-weight: bold;
+    color: #007bff !important;
+  }
+  
+  .nav-item.active .nav-link {
+    font-weight: bold;
+    color: #007bff !important;
+  }
+  
+  .navbar-brand .logo {
+    height: 100px; /* Adjust the height to make it 2.5 times bigger, assuming original was 40px */
+    margin-left: 20px;
+  }
