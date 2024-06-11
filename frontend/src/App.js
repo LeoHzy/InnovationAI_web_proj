@@ -1,32 +1,25 @@
-import React, {useState, useEffect} from 'react'
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Home from './components/Home';
+import About from './components/About';
+import Contact from './components/Contact';
+import Chat from './components/Chat';
+import './style.css';
 
 function App() {
-  const [data, setData] = useState([{}])
-
-  useEffect(()=> { 
-    fetch("/members").then( 
-      res => res.json() 
-    ).then(
-      data => {
-        setData(data) 
-        console.log(data)
-      }
-    )   
-  },[])
-
   return (
-    <div>
-      {
-        typeof data.members === 'undefined' ? (
-          <p>Loading...</p>
-        ) : (
-          data.members.map((member, i) => (
-            <p key={i}>{member}</p>
-          ))
-        )
-      }
-    </div>
-  )
+    <Router>
+      <div>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/Contact" element={<Contact />} />
+          <Route path="/chatbot" element={<Chat />} />
+        </Routes>
+      </div>
+    </Router>
+  );
 }
 
-export default App
+
+export default App;

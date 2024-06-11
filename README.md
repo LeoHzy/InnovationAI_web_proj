@@ -26,6 +26,14 @@ sudo npm install -g npm@10.8.1
 ~~~ 
 npx create-react-app frontend
 ~~~
+### 3. install react router dom
+~~~ 
+npm install react-router-dom
+~~~
+### 4. install axios
+~~~ 
+npm install axios
+~~~
 
 ### react app connection with server
 > add "proxy": "http://127.0.0.1:5000" in package.json
