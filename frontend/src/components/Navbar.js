@@ -26,7 +26,7 @@ const NavigationBar = () => {
             <Link className="nav-link" to="/contact">Contact Us</Link>
           </li>
           <li className={`nav-item ${location.pathname === '/chatbot' ? 'active' : ''}`}>
-            <Link className="nav-link" to="/chatbot">Chat</Link>
+            <Link className="nav-link" to="/chatbot">Chatbot</Link>
           </li>
         </ul>
       </div>

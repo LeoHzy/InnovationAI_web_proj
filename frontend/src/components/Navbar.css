@@ -1,5 +1,13 @@
-.navbar {
+body {
+    padding-top: 120px; /* Adjust this value to the height of your navbar to prevent content overlap */
+  }
+  
+  .navbar {
     margin-bottom: 20px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000; /* Ensure the navbar is on top */
   }
   
   .nav-link {
@@ -17,6 +25,6 @@
   }
   
   .navbar-brand .logo {
-    height: 100px; /* Adjust the height to make it 2.5 times bigger, assuming original was 40px */
-    margin-left: 20px;
+    height: 100px; /* Adjust the height to make it 2.5 times bigger */
+    margin-left: 20px; /* Add margin to the left to shift the logo right */
   }

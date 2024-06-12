@@ -11,11 +11,10 @@ const Contact = () => {
           <div className="col-md-6">
             <div className="contact-info light-blue-bg p-4">
               <h3>Contact Information</h3>
-              <p>Say something to start a live chat!</p>
               <ul className="list-unstyled">
                 <li><i className="fas fa-phone"></i> +1 012 3456 789</li>
                 <li><i className="fas fa-envelope"></i> demo@gmail.com</li>
-                <li><i className="fas fa-map-marker-alt"></i> 12345 xxx street, San Jose, United States</li>
+                <li><i className="fas fa-map-marker-alt"></i> 18 S 2nd St, Office NO.115, San Jose, California 95113, US</li>
               </ul>
               <div className="social-icons">
                 <i className="fab fa-twitter"></i>
