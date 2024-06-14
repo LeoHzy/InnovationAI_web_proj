@@ -7,6 +7,7 @@ import {
   Message,
   MessageInput,
 } from '@chatscope/chat-ui-kit-react';
+import '../App.css';
 
 const Chat = () => {
   const [messages, setMessages] = useState([
@@ -18,7 +19,7 @@ const Chat = () => {
   ]);
   const [isTyping, setIsTyping] = useState(false);
   const [isRateLimited, setIsRateLimited] = useState(false);
-  const OPENAI_API_KEY = 'sk-proj-c5gDbOm8GrNx1y8EJFduT3BlbkFJFG4dlmsNr90BqXxZAQsj';
+  const OPENAI_API_KEY = '';
 
   const systemMessage = {
     role: 'system',
@@ -96,26 +97,30 @@ const Chat = () => {
   }
 
   return (
-    <MainContainer>
-      <ChatContainer>
-        <MessageList>
-          {messages.map((msg, index) => (
-            <Message
-              key={index}
-              model={{
-                message: msg.message,
-                sentTime: 'just now',
-                sender: msg.sender,
-                direction: msg.sender === 'User' ? 'outgoing' : 'incoming',
-                position: 'single',
-              }}
-            />
-          ))}
-          {isTyping && <Message model={{ message: 'Typing...', sentTime: 'just now', sender: 'ChatGPT', direction: 'incoming', position: 'single' }} />}
-        </MessageList>
-        <MessageInput placeholder="Type message here" onSend={handleSend} />
-      </ChatContainer>
-    </MainContainer>
+    <div className="outer-container">
+      <div className="chat-box">
+        <MainContainer>
+          <ChatContainer className="chat-container">
+            <MessageList>
+              {messages.map((msg, index) => (
+                <Message
+                  key={index}
+                  model={{
+                    message: msg.message,
+                    sentTime: 'just now',
+                    sender: msg.sender,
+                    direction: msg.sender === 'User' ? 'outgoing' : 'incoming',
+                    position: 'single',
+                  }}
+                />
+              ))}
+              {isTyping && <Message model={{ message: 'Typing...', sentTime: 'just now', sender: 'ChatGPT', direction: 'incoming', position: 'single' }} />}
+            </MessageList>
+            <MessageInput placeholder="Type message here" onSend={handleSend} />
+          </ChatContainer>
+        </MainContainer>
+      </div>
+    </div>
   );
 };
 

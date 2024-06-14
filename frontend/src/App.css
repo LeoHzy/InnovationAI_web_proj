@@ -36,3 +36,22 @@
     transform: rotate(360deg);
   }
 }
+
+.outer-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Full viewport height to center vertically */
+}
+
+.chat-box {
+  width: 1600px; /* Adjust the width as needed */
+  max-width: 1600px;
+  height: 900px; /* Adjust the height as needed */
+  max-height: 900px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+
