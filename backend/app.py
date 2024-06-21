@@ -6,6 +6,7 @@ import os
 load_dotenv()
 
 app = Flask(__name__)
+
 CORS(app)
 
 # Configuration for Flask-Mail
