@@ -28,6 +28,16 @@ const NavigationBar = () => {
           <li className={`nav-item ${location.pathname === '/chatbot' ? 'active' : ''}`}>
             <Link className="nav-link" to="/chatbot">Chatbot</Link>
           </li>
+          <li className="nav-item dropdown">
+            <Link className="nav-link dropdown-toggle" to="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              More
+            </Link>
+            <div className="dropdown-menu" aria-labelledby="navbarDropdown">
+              <Link className="dropdown-item" to="#">Temp 1</Link>
+              <Link className="dropdown-item" to="#">Temp 2</Link>
+              <Link className="dropdown-item" to="#">Temp 3</Link>
+            </div>
+          </li>
         </ul>
       </div>
     </nav>

@@ -28,3 +28,7 @@ body {
     height: 100px; /* Adjust the height to make it 2.5 times bigger */
     margin-left: 20px; /* Add margin to the left to shift the logo right */
   }
+  
+  .navbar-custom .navbar-nav {
+    margin-left: 20; /* Remove left margin */
+  }
