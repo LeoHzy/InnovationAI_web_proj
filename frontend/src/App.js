@@ -1,25 +1,38 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Home from './components/Home';
-import About from './components/About';
-import Contact from './components/Contact';
-import Chat from './components/Chat';
-import NavigationBar from './components/Navbar'; // Import the Navbar component
+import { BrowserRouter as Router} from 'react-router-dom';
+import { Footer, Blog, Possibility, Features, About, Header, ChatPage, Contact } from './containers';
+import { CTA, Brand, Navbar} from './components';
 
-function App() {
-  return (
-    <Router>
-      <NavigationBar />
-      <div>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/chatbot" element={<Chat />} />
-        </Routes>
+import './App.css';
+
+const App = () => (
+  <Router>
+    <div className="App">
+      <div className="gradient__bg">
+        <Navbar />
+        <Header />
+        <CTA />
       </div>
-    </Router>
-  );
-}
+      <Brand />
+      <div id="about">
+        <About />
+        <Features />
+      </div>
+      <div id="possibility">
+        <Possibility />
+      </div>
+      <div id="chatbot">
+        <ChatPage />
+      </div>
+      <Blog />
+      <div id="contact">
+        <Contact />
+      </div>
+      
+      
+      <Footer />
+    </div>
+  </Router>
+);
 
 export default App;

@@ -9,7 +9,6 @@ app = Flask(__name__)
 
 CORS(app)
 
-# Configuration for Flask-Mail
 app.config['MAIL_SERVER'] = 'smtp.gmail.com'
 app.config['MAIL_PORT'] = 587
 app.config['MAIL_USE_TLS'] = True
@@ -29,12 +28,10 @@ def send_email():
     subject = data.get('subject')
     message = data.get('message')
 
-    # Send confirmation email to user
     msg = Message('We have received your inquiry', recipients=[user_email])
     msg.body = f"Dear {first_name},\n\nWe have received your inquiry and will get back to you shortly.\n\nBest regards,\nInnovation AI"
     mail.send(msg)
 
-    # Send inquiry details to customer service
     customer_service_email = os.getenv('MAIL_USERNAME')
     msg = Message('New Inquiry Received', recipients=[customer_service_email])
     msg.body = f"New inquiry received from {first_name} {last_name}.\n\nEmail: {user_email}\nPhone: {phone}\nSubject: {subject}\nMessage: {message}"
