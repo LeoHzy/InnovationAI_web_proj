@@ -97,11 +97,11 @@ const Chatbot = () => {
   }
 
   return (
-    <div className="outer-container" id="chatbot">
+    <div className="outer-container">
       <div className="chat-box">
         <MainContainer>
           <ChatContainer className="chat-container">
-            <MessageList className="message-list">
+            <MessageList>
               {messages.map((msg, index) => (
                 <Message
                   key={index}
@@ -116,7 +116,7 @@ const Chatbot = () => {
               ))}
               {isTyping && <Message model={{ message: 'Typing...', sentTime: 'just now', sender: 'ChatGPT', direction: 'incoming', position: 'single' }} />}
             </MessageList>
-            <MessageInput className="message-input" placeholder="Type message here" onSend={handleSend} />
+            <MessageInput placeholder="Type message here" onSend={handleSend} />
           </ChatContainer>
         </MainContainer>
       </div>
