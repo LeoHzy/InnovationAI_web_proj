@@ -1,8 +1,7 @@
 {
-    "name": "innovaion-ai-web-proj",
+    "name": "root",
     "version": "1.0.0",
     "scripts": {
-      "start": "cd frontend && npm install && npm run build"
-    },
-    "dependencies": {}
+      "heroku-postbuild": "npm install --prefix frontend && npm run build --prefix frontend"
+    }
   }
