@@ -52,8 +52,7 @@
     "eslint-plugin-react": "^7.26.1",
     "eslint-plugin-react-hooks": "^4.2.0"
   },
-  "engines": {
-    "node": "20.x",
-    "npm": "10.x"
+  "babel": {
+    "plugins": ["@babel/plugin-proposal-private-property-in-object"]
   }
 }
