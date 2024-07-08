@@ -47,14 +47,28 @@
     cursor: pointer;
 }
 
-.gpt3__blog-container_article-content p:last-child {
+.gpt3__blog-container_article-content .read-full-article {
+    font-family: var(--font-family);
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 35px;
+    color: #fff;
+    text-decoration: none;
     cursor: pointer;
+    transition: color 0.3s ease, background-color 0.3s ease;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    background-color: transparent;
 }
 
+.gpt3__blog-container_article-content .read-full-article:hover {
+    color: #000;
+    background-color: #fff;
+}
 
 @media screen and (max-width: 550px) {
     .gpt3__blog-container_article-content h3 {
         font-size: 18px;
-        line-height: 25p;
+        line-height: 25px;
     }
 }

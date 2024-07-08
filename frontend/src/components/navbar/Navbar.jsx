@@ -17,6 +17,7 @@ const Navbar = () => {
           <p><ScrollLink to="home" smooth={true} duration={500}>Home</ScrollLink></p>
           <p><ScrollLink to="about" smooth={true} duration={500}>About Us</ScrollLink></p>
           <p><ScrollLink to="chatbot" smooth={true} duration={500}>Chatbot</ScrollLink></p>
+          <p><ScrollLink to="blog" smooth={true} duration={500}>Blog</ScrollLink></p>
           <p><ScrollLink to="contact" smooth={true} duration={500}>Contact Us</ScrollLink></p>
           <div className="dropdown">
             <p><ScrollLink to="#" smooth={true} duration={500}>More</ScrollLink></p>
@@ -38,6 +39,7 @@ const Navbar = () => {
             <p><ScrollLink to="home" smooth={true} duration={500} onClick={() => setToggleMenu(false)}>Home</ScrollLink></p>
             <p><ScrollLink to="about" smooth={true} duration={500} onClick={() => setToggleMenu(false)}>About Us</ScrollLink></p>
             <p><ScrollLink to="chatbot" smooth={true} duration={500} onClick={() => setToggleMenu(false)}>Chatbot</ScrollLink></p>
+            <p><ScrollLink to="blog" smooth={true} duration={500} onClick={() => setToggleMenu(false)}>Blog</ScrollLink></p>
             <p><ScrollLink to="contact" smooth={true} duration={500} onClick={() => setToggleMenu(false)}>Contact Us</ScrollLink></p>
             <div className="dropdown">
             <p><ScrollLink to="#" smooth={true} duration={500}>More</ScrollLink></p>

@@ -3,6 +3,9 @@ from flask_mail import Mail, Message
 from flask_cors import CORS
 from dotenv import load_dotenv
 import os
+from pymongo import MongoClient, DESCENDING
+import certifi
+
 load_dotenv()
 
 app = Flask(__name__)
@@ -17,6 +20,11 @@ app.config['MAIL_PASSWORD'] = os.getenv('MAIL_PASSWORD')
 app.config['MAIL_DEFAULT_SENDER'] = os.getenv('MAIL_USERNAME')
 
 mail = Mail(app)
+
+# MongoDB setup
+client = MongoClient(os.getenv('MONGODB_URI'), tlsCAFile=certifi.where())
+db = client.innovationai_blogdb
+blogs_collection = db.blogs
 
 @app.route('/send-email', methods=['POST'])
 def send_email():
@@ -38,6 +46,23 @@ def send_email():
     mail.send(msg)
 
     return jsonify({'message': 'Emails sent successfully'})
+
+@app.route('/blogs', methods=['GET'])
+def get_blogs():
+    try:
+        blogs = list(blogs_collection.find({}, {'_id': 0, 'articleId': 1, 'date': 1, 'text': 1}).sort('articleId', DESCENDING).limit(5))
+        return jsonify(blogs)
+    except Exception as e:
+        print(f"An error occurred: {e}")
+        return jsonify({'error': 'An error occurred while fetching blogs.'}), 500
+    
+@app.route('/blog/<int:articleId>', methods=['GET'])
+def get_blog(articleId):
+    blog = blogs_collection.find_one({'articleId': articleId}, {'_id': 0, 'articleId': 1, 'date': 1, 'text': 1, 'content': 1})
+    if blog:
+        return jsonify(blog)
+    else:
+        return jsonify({'error': 'Blog not found'}), 404
 
 if __name__ == '__main__':
     app.run(debug=True)
